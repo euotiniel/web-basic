@@ -2,19 +2,22 @@
 
 REM Define a sequência de escape ANSI para cor verde
 
-REM Verifica se a pasta "page" já existe
-IF EXIST "page" (
-    echo A pasta "page" ja existe. Por favor, tente em outro diretorio.
+REM Solicita ao usuário o nome da pasta
+set /p folderName=Digite o nome da pasta: 
+
+REM Verifica se a pasta já existe
+IF EXIST "%folderName%" (
+    echo A pasta "%folderName%" já existe. Por favor, tente outro nome.
     exit /b
 )
 
-REM Cria a pasta "page"
-mkdir page
+REM Cria a pasta
+mkdir "%folderName%"
 
-REM Cria o arquivo "README.md" dentro da pasta "page"
-echo # README > page\README.md
+REM Cria o arquivo "README.md" dentro da pasta
+echo # README > "%folderName%\README.md"
 
-REM Cria o arquivo "index.html" dentro da pasta "page"
+REM Cria o arquivo "index.html" dentro da pasta
 (
 echo ^<!DOCTYPE html^>
 echo ^<html lang="en"^>
@@ -32,10 +35,10 @@ echo    ^</div^>
 echo ^<script src='js/app.js'^>^</script^>
 echo ^</body^>
 echo ^</html^>
-) > page\index.html
+) > "%folderName%\index.html"
 
 REM Cria a pasta "styles"
-mkdir page\styles
+mkdir "%folderName%\styles"
 
 REM Cria o arquivo "style.css" dentro da pasta "styles"
 (
@@ -52,17 +55,17 @@ echo     justify-content: center;
 echo     align-items: center;
 echo     height: 100vh;
 echo }
-) > page\styles\style.css
+) > "%folderName%\styles\style.css"
 
 REM Cria a pasta "js"
-mkdir page\js
+mkdir "%folderName%\js"
 
 REM Cria o arquivo "app.js" dentro da pasta "js"
-echo console.log('Hello World!'); > page\js\app.js
+echo console.log('Hello World!'); > "%folderName%\js\app.js"
 
 REM Exibe uma mensagem de confirmação
-echo Estrutura de pasta e arquivos criada com sucesso.
-echo.
-echo cd page
-echo.
-echo code .
+echo Estrutura de pasta e arquivos criados com sucesso.
+
+REM Abre a pasta no Visual Studio Code
+cd "%folderName%"
+code .
