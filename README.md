@@ -1,14 +1,14 @@
 
-## Descrição
+## Description
 
-Um pequeno script que cria automaticamente os arquivos e diretórios necessários para começar a desenvolver páginas web simples, incluindo um arquivo HTML, um arquivo CSS e um arquivo JavaScript.
+A small script that automatically creates the files and directories you need to start developing simple web pages, including an HTML file, a CSS file, and a JavaScript file.
 
-## Recursos
+## Resources
 
-- Criação automática da estrutura de diretórios e arquivos necessários.
-- Arquivo HTML básico com um esqueleto inicial.
-- Estilo CSS predefinido para uma aparência limpa e básica.
-- Script JavaScript simples para teste e depuração.
+- Automatic creation of the necessary directory structure and files.
+- Basic HTML file with an initial skeleton.
+- Predefined CSS styling for a clean and basic look.
+- Simple JavaScript script for testing and debugging.
 
 
 
